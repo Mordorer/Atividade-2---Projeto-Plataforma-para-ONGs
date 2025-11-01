@@ -1,0 +1,49 @@
+/* =======================================
+   1. SISTEMA DE DESIGN (VARIABLES)
+   ======================================= */
+
+/* 1.1. Paleta de Cores (Mínimo 8 cores) */
+:root {
+    /* Primárias (Teal) */
+    --color-primary-dark: #047857; /* teal-700 (Para estados ativos/escuros) */
+    --color-primary-hover: #0d9488; /* teal-600 (NOVA Cor Base, similar à Imagem 1) */
+    --color-primary-base: #047857; /* teal-400 (NOVA Cor para Hover, similar à Imagem 2) */
+    
+    /* Secundárias (Amarelo) */
+    --color-secondary-base: #facc15; /* yellow-400 */
+    --color-secondary-hover: #eab308; /* yellow-500 */
+
+    /* Neutras */
+    --color-neutral-darkest: #1f2937; /* gray-800 */
+    --color-neutral-dark: #4b5563; /* gray-600 */
+    --color-neutral-medium: #6b7280; /* gray-500 */
+    --color-neutral-light: #f9fafb; /* gray-50 */
+    --color-white: #ffffff;
+    --color-red-error: #ef4444; /* red-500 */
+	--color-white: #ffffff;
+	--color-hero-background: #065f46;
+}
+
+/* 1.2. Tipografia Hierárquica (Mínimo 5 tamanhos) */
+:root {
+    --font-family-base: 'Inter', sans-serif;
+    
+    --font-size-base: 1rem; /* 16px */
+    --font-size-sm: 0.875rem; /* 14px */
+    --font-size-lg: 1.125rem; /* 18px */
+    --font-size-xl: 1.5rem; /* 24px (h3) */
+    --font-size-2xl: 2rem; /* 32px (h2) */
+    --font-size-3xl: 2.5rem; /* 40px (h1) */
+}
+
+/* 1.3. Sistema de Espaçamento Modular */
+:root {
+    --space-xxs: 4px;
+    --space-xs: 8px;   /* 8px */
+    --space-sm: 16px;  /* 16px */
+    --space-md: 24px;  /* 24px */
+    --space-lg: 32px;  /* 32px */
+    --space-xl: 48px;  /* 48px */
+    --space-2xl: 64px; /* 64px */
+    --space-3xl: 80px;
+}

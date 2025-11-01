@@ -1,0 +1,172 @@
+/* ========================================================= */
+/* ARQUIVO: components/forms.css                             */
+/* OBJETIVO: Estilização de Formulários, Inputs e Feedback   */
+/* ========================================================= */
+
+/* --- ESTILIZAÇÃO DE INPUTS --- */
+.form-group {
+    margin-bottom: var(--espacamento-sm);
+}
+
+.form-label {
+    display: block;
+    font-size: var(--tamanho-sm);
+    font-weight: var(--peso-medio);
+    color: var(--cor-texto-principal);
+    margin-bottom: 0.25rem;
+}
+
+.form-input, .form-textarea, .form-select {
+    width: 100%;
+    padding: var(--espacamento-xs) var(--espacamento-sm);
+    border: 1px solid var(--cor-borda-padrao);
+    border-radius: 0.5rem;
+    font-size: var(--tamanho-md);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: white;
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    outline: none;
+    /* Validação Visual de Foco */
+    border-color: var(--cor-primaria-base);
+    box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.25);
+}
+
+/* Estilo para Fieldset/Legend */
+.form-fieldset {
+    border: 1px solid var(--cor-borda-padrao);
+    padding: var(--espacamento-md);
+    border-radius: 0.5rem;
+    margin-bottom: var(--espacamento-md);
+}
+
+.form-legend {
+    font-size: var(--tamanho-lg);
+    font-weight: var(--peso-bold);
+    padding: 0 var(--espacamento-xs);
+    color: var(--cor-texto-principal);
+}
+
+/* Campo de Arquivo (Input type="file") */
+.form-file-input {
+    width: 100%;
+    color: var(--cor-texto-secundario);
+    font-size: var(--tamanho-sm);
+    /* Customização do botão de upload */
+    --file-input-color: var(--cor-primaria-base);
+    --file-input-bg: #d1fae5;
+    
+    &::file-selector-button {
+        margin-right: var(--espacamento-sm);
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        border: 0;
+        font-size: var(--tamanho-sm);
+        font-weight: var(--peso-medio);
+        background-color: var(--file-input-bg);
+        color: var(--file-input-color);
+        cursor: pointer;
+    }
+}
+
+/* --- LAYOUTS ESPECÍFICOS DE FORMULÁRIO --- */
+
+.form-container {
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: var(--espacamento-lg);
+    border-radius: 0.5rem;
+    box-shadow: var(--sombra-lg);
+}
+
+/* Layout de Grid (MD+) - Definições em layout.css */
+
+/* Login / Senha com Ícone (Gestao.html) */
+.login-box {
+    max-width: 28rem;
+    margin: 0 auto;
+    background-color: white;
+    padding: var(--espacamento-lg);
+    border-radius: 0.5rem;
+    box-shadow: var(--sombra-lg);
+}
+
+.password-field {
+    position: relative;
+}
+.input-with-icon {
+    padding-right: var(--espacamento-xl);
+}
+.password-toggle-btn {
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(10%);
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--cor-texto-secundario);
+}
+.password-toggle-btn:hover {
+    color: var(--cor-primaria-clara);
+}
+
+/* --- COMPONENTES DE FEEDBACK (ALERTS/TOASTS) --- */
+
+#notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: var(--espacamento-sm);
+    color: white;
+    text-align: center;
+    z-index: 100;
+    transition: transform 0.3s ease-in-out;
+    /* Oculto por padrão no JS (notification-hidden) */
+}
+
+.notification-error {
+    background-color: var(--cor-feedback-erro) !important;
+    opacity: 0.95;
+}
+.notification-success {
+    background-color: var(--cor-primaria-base) !important;
+    opacity: 0.95;
+}
+
+.notification-hidden {
+    transform: translateY(-100%);
+}
+.notification-visible {
+    transform: translateY(0);
+}
+
+/* Tabela de Gestão */
+.tabela-gestao {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+.tabela-gestao thead {
+    background-color: var(--cor-fundo-medio);
+}
+.tabela-gestao th {
+    padding: var(--espacamento-sm);
+    font-weight: var(--peso-bold);
+    color: var(--cor-texto-principal);
+    border-bottom: 2px solid var(--cor-borda-padrao);
+}
+.tabela-gestao td {
+    padding: var(--espacamento-sm);
+    border-bottom: 1px solid var(--cor-fundo-medio);
+}
+.card-dashboard {
+    background-color: white;
+    padding: var(--espacamento-lg);
+    border-radius: 0.5rem;
+    box-shadow: var(--sombra-md);
+}

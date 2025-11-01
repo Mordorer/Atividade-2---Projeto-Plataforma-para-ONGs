@@ -1,0 +1,245 @@
+/* =======================================
+   4. COMPONENTES DE INTERFACE
+   ======================================= */
+
+/* 4.1. Botões com Estados Visuais */
+.btn {
+    display: inline-block;
+    /* Padding e Fonte padrão para volume */
+    padding: 0.75rem 1.5rem; 
+    font-size: var(--font-size-base); 
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s, transform 0.1s;
+    border: none;
+    min-height: 48px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    
+    /* Arredondamento Padrão para TODOS os botões de AÇÃO (Salvar Projeto, Cancelar) */
+    border-radius: var(--space-xs); 
+}
+
+/* Botão Primário (Cor Verde) */
+.btn-primary {
+    background-color: var(--color-primary-base);
+	color: var(--color-white) !important; /* FORÇA: Garante a cor branca em todos os estados normais e link */
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover); /* Cor da Imagem 2 (clareia) */
+    color: var(--color-white); /* Garante que a cor da fonte continue branca */
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* Botão Secundário (Doação) */
+.btn-secondary {
+    background-color: var(--color-secondary-base);
+    color: var(--color-neutral-darkest);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-secondary-hover);
+}
+
+/* Modificador de Formato: Cápsula (para o Seja Voluntário) */
+.btn-pill {
+    border-radius: 9999px !important;
+    background-color: var(--color-primary-base); /* Cor da Imagem 2 (clareia) */
+    color: var(--color-white); /* Garante que a cor da fonte continue branca */
+}
+
+/* Botão Neutro (Editar/Cancelar) */
+.btn-neutral {
+    background-color: #f3f4f6; 
+    color: var(--color-neutral-darkest);
+    border: 1px solid #d1d5db; 
+    
+    /* Override de Padding e Fonte para botões pequenos na tabela */
+    padding: 0.5rem 1rem; 
+    font-size: var(--font-size-sm); 
+    font-weight: 600; 
+    
+    /* Arredondamento suave, como na imagem */
+    border-radius: 8px; /* Reforçando o arredondamento suave */
+    min-height: auto; /* Permite que o botão seja menor */
+}
+
+.btn-neutral:hover {
+    background-color: #e5e7eb; /* gray-200 */
+}
+
+/* Estado Disabled */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* 4.2. Cards Responsivos (Projetos/Blog) */
+.card {
+    background-color: var(--color-white);
+    border-radius: var(--space-xs);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-var(--space-xs));
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+    width: 100%;
+    height: 192px; /* h-48 */
+    object-fit: cover;
+}
+
+.card-content {
+    padding: var(--space-md);
+}
+
+/* 4.3. Formulários Estilizados com Validação Visual (AJUSTADO PARA A ALTURA CORRETA) */
+.form-group {
+    /* Aumenta a margem inferior entre grupos */
+    margin-bottom: var(--space-md); 
+}
+
+.form-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-neutral-dark);
+    margin-bottom: var(--space-xs); /* Aumenta o espaço abaixo do label */
+}
+
+.form-input, .form-select, .form-textarea {
+    width: 100%;
+    /* Aumenta o padding vertical para dar mais altura ao campo, idêntico ao original do Tailwind */
+    padding: 0.75rem var(--space-sm); /* ~12px vertical, 16px horizontal */
+    border: 1px solid #d1d5db; /* gray-300 */
+    border-radius: var(--space-xs);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    /* Garante que os inputs tenham uma altura mínima maior (~44px) */
+    min-height: 48px; 
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--color-primary-base);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.3); /* ring-teal-500 */
+}
+
+/* Validação Visual */
+.form-input:invalid, .form-input.error { 
+    border-color: var(--color-red-error);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
+}
+
+/* Adicionamos uma regra para desativar a borda nativa se o campo não tiver foco e não for válido */
+.form-input:not(:focus):invalid {
+    /* Devolve a borda padrão para campos não preenchidos */
+    border-color: #d1d5db; 
+    box-shadow: none;
+}
+
+/* Deixando a regra original para forçar o vermelho apenas quando a classe 'error' está presente */
+.form-input.error {
+    border-color: var(--color-red-error);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.3);
+}
+
+/* 4.4. Componentes de Feedback (Notificação Global) */
+#notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-sm);
+    text-align: center;
+    color: var(--color-white);
+    z-index: 100;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+#notification.show {
+    transform: translateY(0);
+}
+
+#notification.success {
+    background-color: var(--color-primary-base);
+}
+
+#notification.error {
+    background-color: var(--color-red-error);
+}
+
+/* 4.5. Sistema de Badges/Tags (Categorização) */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.badge-educacao { background-color: #dbeafe; color: #1e40af; } /* blue-100/blue-800 */
+.badge-meio-ambiente { background-color: #d1fae5; color: #065f46; } /* green-100/green-800 */
+.badge-cultura { background-color: #ffedd5; color: #9a3412; } /* orange-100/orange-800 */
+.badge-saude { background-color: #fce7f3; color: #9d174d; } /* pink-100/pink-800 */
+
+/* Estilos Específicos do Dashboard (Gestao) */
+.table-gestao {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.table-gestao th, .table-gestao td {
+    padding: var(--space-sm);
+}
+.table-gestao thead {
+    background-color: #f3f4f6; /* gray-50 */
+}
+.table-gestao tbody tr {
+    border-bottom: 1px solid #e5e7eb; /* gray-200 */
+}
+
+/* 4.6 Estilização do Input File (Foto Principal) */
+.file-input {
+    /* Oculta o texto nativo "Nenhum arquivo escolhido" e a caixa de input */
+    color: transparent; 
+}
+
+/* Estiliza o botão de seleção (que é o 'file-select-button') */
+.file-input::file-selector-button {
+    margin-right: var(--space-sm);
+    padding: 0.5rem 1rem; /* Padding para o botão ser grande */
+    border-radius: var(--space-xs);
+    border: 0;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    
+    /* Cores para o visual verde-claro da imagem */
+    background-color: #ecfdf5; /* teal-50 */
+    color: var(--color-primary-dark); /* teal-700 */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-input::file-selector-button:hover {
+    background-color: #d1fae5; /* teal-100 */
+}
+
+/* Estiliza o texto "Nenhum arquivo escolhido" */
+.file-input::after {
+    content: "Nenhum arquivo escolhido";
+    /* Volta a cor do texto para o padrão */
+    color: var(--color-neutral-dark);
+}

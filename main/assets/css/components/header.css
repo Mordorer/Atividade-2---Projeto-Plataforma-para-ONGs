@@ -1,0 +1,75 @@
+/* ========================================================= */
+/* ARQUIVO: components/header.css                            */
+/* OBJETIVO: Estilização do Cabeçalho e Navegação            */
+/* ========================================================= */
+
+.main-header {
+    background-color: white;
+    box-shadow: var(--sombra-md);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--espacamento-sm);
+    padding-bottom: var(--espacamento-sm);
+}
+
+.nav-link {
+    font-weight: var(--peso-medio);
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+    transition: color 0.3s;
+    padding-bottom: 2px;
+}
+
+.nav-link:hover {
+    color: var(--cor-primaria-clara);
+}
+
+/* Link Ativo */
+.nav-link.active {
+    color: var(--cor-primaria-clara);
+    border-bottom: 2px solid var(--cor-primaria-clara);
+}
+
+/* Menu Desktop (Oculto em Mobile - definido em layout.css) */
+.nav-desktop {
+    display: none;
+    align-items: center;
+    gap: var(--espacamento-sm);
+}
+
+/* Menu Mobile/Hambúrguer */
+.mobile-menu-toggle {
+    display: block;
+    color: var(--cor-texto-principal);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.mobile-menu {
+    padding-left: var(--espacamento-md);
+    padding-right: var(--espacamento-md);
+    padding-bottom: var(--espacamento-sm);
+    display: none; 
+    flex-direction: column;
+    gap: var(--espacamento-xs);
+}
+
+.mobile-menu a {
+    display: block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-toggle, .mobile-menu {
+        display: none !important;
+    }
+}
