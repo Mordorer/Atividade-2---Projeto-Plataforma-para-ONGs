@@ -1,18 +1,5 @@
-/* =======================================
-   2. LEIAUTES E ESTRUTURA (GRID/FLEXBOX)
-   ======================================= */
-
-/* 2.1. Breakpoints Responsivos (Mínimo 5) */
-/* Definição dos tamanhos de tela mais comuns (Mobile-first) */
-/* Extra Small: 0-479px (Padrão) */
-/* Small: 480px (sm) */
-/* Medium: 768px (md) */
-/* Large: 1024px (lg) */
-/* Extra Large: 1280px (xl) */
-
-/* 2.2. Container e Grid Principal */
 .container {
-    max-width: 1280px; /* Base para xl */
+    max-width: 1280px;
     margin: 0 auto;
     padding-left: var(--space-md);
     padding-right: var(--space-md);
@@ -20,18 +7,14 @@
 
 .grid-layout {
     display: grid;
-    /* Padrão Mobile: 1 coluna */
     grid-template-columns: 1fr;
     gap: var(--space-lg);
 }
 
-/* 2.3. Sistema de Grid Customizado (12 colunas) */
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
-    /* Padrão Mobile: Coluna inteira */
     width: 100%;
 }
 
-/* 2.4. Flexbox Utilities */
 .flex-group {
     display: flex;
     gap: var(--space-sm);
@@ -48,11 +31,6 @@
 }
 
 
-/* =======================================
-   3. MEDIA QUERIES (BREAKPOINTS)
-   ======================================= */
-
-/* Dispositivos Small (sm): >= 480px */
 @media (min-width: 480px) {
     .container {
         padding-left: var(--space-xl);
@@ -60,28 +38,24 @@
     }
 }
 
-/* Dispositivos Medium (md): >= 768px */
 @media (min-width: 768px) {
-    /* Grid de 2 colunas para cards/seções */
     .grid-2-col-md {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    /* Sistema de 12 colunas (MD) */
     .md-col-1 { grid-column: span 1; }
     .md-col-2 { grid-column: span 2; }
     .md-col-3 { grid-column: span 3; }
     .md-col-4 { grid-column: span 4; }
     .md-col-5 { grid-column: span 5; }
-    .md-col-6 { grid-column: span 6; } /* 1/2 */
+    .md-col-6 { grid-column: span 6; }
     .md-col-7 { grid-column: span 7; }
     .md-col-8 { grid-column: span 8; }
     .md-col-9 { grid-column: span 9; }
     .md-col-10 { grid-column: span 10; }
     .md-col-11 { grid-column: span 11; }
-    .md-col-12 { grid-column: span 12; } /* Full */
+    .md-col-12 { grid-column: span 12; }
     
-    /* Layouts Específicos */
     .header-nav .desktop-menu {
         display: flex;
     }
@@ -89,65 +63,52 @@
         display: none;
     }
     
-    /* ESTILOS DE FORMULÁRIO */
-    
-    /* Divide em 2 colunas iguais para E-mail/Data e CPF/Telefone */
     .form-grid-2-col {
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
     }
     
-    /* ATUALIZADO: Ativa o grid de 12 colunas para o agrupamento de Endereço */
     .form-grid-endereco {
-        grid-template-columns: repeat(12, 1fr); 
+        grid-template-columns: repeat(12, 1fr);
         gap: var(--space-md);
     }
     
-    /* ATUALIZADO: Força CEP a ocupar 4 colunas (aproximadamente 1/3) */
     .form-grid-endereco .form-group:nth-child(1) {
-        grid-column: span 4; 
+        grid-column: span 4;
     }
-    /* ATUALIZADO: Força Endereço a ocupar 8 colunas (aproximadamente 2/3) */
     .form-grid-endereco .form-group:nth-child(2) {
-        grid-column: span 8; 
+        grid-column: span 8;
     }
     
-    /* CORREÇÃO FINAL: Força o contêiner de Cidade/Estado a iniciar em uma nova linha e se dividir */
     .form-grid-endereco .form-group.form-grid-2-col {
-        grid-column: 1 / -1; /* Inicia na primeira coluna e vai até a última (12) */
+        grid-column: 1 / -1;
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Divide o espaço igualmente em 2 */
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--space-md);
     }
 }
 
-/* Dispositivos Large (lg): >= 1024px */
 @media (min-width: 1024px) {
-    /* Grid de 3 colunas para cards */
     .grid-3-col-lg {
         grid-template-columns: repeat(3, 1fr);
     }
     
-    /* CORREÇÃO DASHBOARD: Força o contêiner do Dashboard a usar Grid e o layout 1/3 e 2/3 */
     .dashboard-layout-lg {
         display: grid;
-        grid-template-columns: repeat(12, 1fr); /* Ativa o grid de 12 colunas */
+        grid-template-columns: repeat(12, 1fr);
         gap: var(--space-lg);
     }
     
-    /* Regras para as colunas do Dashboard */
-    .lg-col-4 { grid-column: span 4; } /* Coluna da esquerda (1/3) */
-    .lg-col-8 { grid-column: span 8; } /* Coluna da direita (2/3) */
+    .lg-col-4 { grid-column: span 4; }
+    .lg-col-8 { grid-column: span 8; }
     
-    /* Layouts Específicos (Mantidos) */
     .two-column-layout-lg {
         display: flex;
         gap: var(--space-lg);
     }
     .two-column-layout-lg > * {
-        flex: 1; /* Divide em colunas iguais */
+        flex: 1;
     }
     
-    /* Sistema de 12 colunas (LG) */
     .lg-col-1 { grid-column: span 1; }
     .lg-col-2 { grid-column: span 2; }
     .lg-col-3 { grid-column: span 3; }
@@ -160,9 +121,8 @@
     .lg-col-12 { grid-column: span 12; }
 }
 
-/* Dispositivos Extra Large (xl): >= 1280px */
 @media (min-width: 1280px) {
     .container {
-        max-width: 1400px; /* Aumenta um pouco o container */
+        max-width: 1400px;
     }
 }

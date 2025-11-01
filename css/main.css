@@ -1,6 +1,4 @@
-/* =======================================
-   5. ARQUIVO PRINCIPAL E ESTILOS GERAIS
-   ======================================= */
+/* 5. ARQUIVO PRINCIPAL E ESTILOS GERAIS */
 
 /* 5.1. Importações */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
@@ -8,7 +6,7 @@
 @import url('layout.css');
 @import url('components.css');
 
-/* 5.2. Reset Básico (Para complementar o que o Tailwind fazia) */
+/* 5.2. Reset Básico */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -50,12 +48,12 @@ a:hover { color: var(--color-primary-dark); }
 }
 
 .header-logo img {
-    height: var(--space-xl); /* h-10 (40px) */
+    height: var(--space-xl);
     width: auto;
 }
 
 .desktop-menu {
-    display: none; /* Oculto por padrão (Mobile-first) */
+    display: none;
     align-items: center;
     gap: var(--space-md);
 }
@@ -79,7 +77,6 @@ a:hover { color: var(--color-primary-dark); }
     padding: var(--space-xs) var(--space-lg);
 }
 
-/* Navegação Mobile (Menu Hambúrguer) */
 .mobile-button {
     background: none;
     border: none;
@@ -89,7 +86,7 @@ a:hover { color: var(--color-primary-dark); }
 }
 
 .mobile-menu {
-    display: none; /* Controlado pelo JS */
+    display: none;
     padding-bottom: var(--space-md);
     padding-top: var(--space-sm);
     border-top: 1px solid #e5e7eb;
@@ -124,7 +121,7 @@ a:hover { color: var(--color-primary-dark); }
 }
 
 .footer-main p {
-    color: #9ca3af; /* gray-400 */
+    color: #9ca3af;
 }
 
 /* 5.6. Utilitários */
@@ -149,7 +146,6 @@ a:hover { color: var(--color-primary-dark); }
 }
 
 .form-input[type="password"] {
-    /* Mantém o padding direito para dar espaço ao ícone (48px) */
     padding-right: 48px !important; 
 }
 
@@ -157,13 +153,11 @@ a:hover { color: var(--color-primary-dark); }
     position: absolute;
     right: 0;
     
-    /* Garante a centralização vertical perfeita */
     top: 70%;
 	right: 2%;
     transform: translateY(-50%);
     
-    /* AJUSTE FINAL: Reduz o padding-right do botão toggle para trazer o ícone para DENTRO */
-    padding: 0 4px; /* Apenas 4px de espaço da borda direita */
+    padding: 0 4px;
     
     cursor: pointer;
     background: none;
@@ -171,7 +165,7 @@ a:hover { color: var(--color-primary-dark); }
     
     height: 100%; 
     display: flex;
-    align-items: center; /* Centraliza o conteúdo (SVG) verticalmente */
+    align-items: center; 
 }
 
 .password-toggle-btn svg {
